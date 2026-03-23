@@ -44,8 +44,7 @@ cd LoginNet
 dotnet run
 ```
 
-Abrir http://localhost:5000 o http://localhost:5001
-
+Abrir http://localhost:5124 
 ## Usuarios de Prueba
 
 | Documento | Tipo | Contraseña |
