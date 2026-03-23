@@ -1,0 +1,194 @@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuenta Bloqueada - CEPLAN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --color-primary: #8B1D1D;
+            --color-secondary: #1D70B8;
+            --color-light: #F3F4F6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--color-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header-bar {
+            background-color: var(--color-primary);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-logo {
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .help-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .blocked-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            max-width: 450px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .blocked-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+        
+        .blocked-icon i {
+            font-size: 3rem;
+            color: var(--color-primary);
+        }
+        
+        .blocked-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 15px;
+        }
+        
+        .blocked-message {
+            color: #6B7280;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
+        .blocked-info {
+            background: #FEF3C7;
+            border-left: 4px solid #D97706;
+            padding: 15px;
+            text-align: left;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+        
+        .blocked-info p {
+            margin: 0;
+            color: #92400E;
+            font-size: 0.9rem;
+        }
+        
+        .btn-volver {
+            background-color: var(--color-secondary);
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-volver:hover {
+            background-color: #155a8a;
+            color: white;
+        }
+        
+        .footer-bar {
+            background: linear-gradient(to right, var(--color-primary) 33.33%, #1F2937 33.33%, #1F2937 66.66%, #6B7280 66.66%);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            color: white;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-bar">
+        <div class="header-logo">CEPLAN</div>
+        <a href="#" class="help-icon">
+            <i class="bi bi-question-lg"></i>
+        </a>
+    </header>
+    
+    <main class="main-content">
+        <div class="blocked-card">
+            <div class="blocked-icon">
+                <i class="bi bi-shield-lock-fill"></i>
+            </div>
+            
+            <h1 class="blocked-title">Cuenta bloqueada temporalmente</h1>
+            
+            <p class="blocked-message">
+                Su cuenta ha sido bloqueada debido a múltiples intentos fallidos de inicio de sesión.
+            </p>
+            
+            <div class="blocked-info">
+                <p>
+                    <i class="bi bi-info-circle me-2"></i>
+                    @ViewBag.Mensaje
+                </p>
+            </div>
+            
+            <a href="@Url.Action("Login", "Account")" class="btn-volver">
+                <i class="bi bi-arrow-left me-2"></i>Volver al Login
+            </a>
+        </div>
+    </main>
+    
+    <footer class="footer-bar">
+        <div class="footer-logo">PERÚ | Presidencia del Consejo de Ministros</div>
+        <div class="footer-logo">Centro Nacional de Planeamiento Estratégico</div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
